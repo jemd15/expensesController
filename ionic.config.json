@@ -1,0 +1,7 @@
+{
+  "name": "expensesController",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
