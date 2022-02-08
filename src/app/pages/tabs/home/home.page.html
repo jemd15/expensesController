@@ -1,0 +1,31 @@
+<ion-content>
+  <app-header-wave></app-header-wave>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <app-monthly-chart></app-monthly-chart>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <app-income-expenses-list limit="2"></app-income-expenses-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <!-- usar carrusel tipo netflix para esto -->
+      <!-- <ion-col size="12"> -->
+        <swiper [config]="config">
+          <ng-template swiperSlide *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+            <app-category-balance-chart category="gift & donation"></app-category-balance-chart>
+          </ng-template>
+        </swiper>
+      <!-- </ion-col> -->
+    </ion-row>
+  </ion-grid>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
