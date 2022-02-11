@@ -19,7 +19,7 @@
     <ion-row>
       <swiper [config]="config">
         <ng-template swiperSlide *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]; let i = index">
-          <app-category-balance-chart [chartColor]="colors[i]" category="gift & donation"></app-category-balance-chart>
+          <app-category-balance-chart [chartColor]="colors[i]" [category]="'gift & donation ' + (i+1)"></app-category-balance-chart>
         </ng-template>
       </swiper>
     </ion-row>

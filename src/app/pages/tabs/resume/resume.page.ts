@@ -15,6 +15,7 @@ export class ResumePage implements OnInit {
     centeredSlidesBounds: true,
     width: window.innerWidth,
     loop: true,
+    loopedSlides: 10, 
     slidesOffsetBefore: 5,
     coverflowEffect: {
       rotate: 50,
