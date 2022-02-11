@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { ColorGeneratorService } from 'src/app/services/colorGenerator/color-generator.service';
+import { SwiperOptions } from 'swiper';
 
 @Component({
   selector: 'app-resume',
@@ -7,9 +9,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumePage implements OnInit {
 
-  constructor() { }
+  config: SwiperOptions = {
+    initialSlide: 1,
+    slidesPerView: this.numberOfCards(),
+    centeredSlidesBounds: true,
+    width: window.innerWidth,
+    loop: true,
+    slidesOffsetBefore: 5,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    }
+  }
+  colors: string[] = []
+
+  constructor(
+    private colorGen: ColorGeneratorService
+  ) { }
 
   ngOnInit() {
+    // generamos un array de colores aleatorios para cada tarjeta
+    for (let i = 0; i < 11; i++) {
+      this.colors.push(this.colorGen.randomColor())
+    }
+  }
+
+  numberOfCards(): number {
+    // calculamos el número de tarjetas que se mostrarán en la página segun el ancho de la pantalla
+    return window.innerWidth / 180
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.config.slidesPerView = this.numberOfCards()
+    console.log('window.innerWidth', window.innerWidth, 'slidesPerView', this.config.slidesPerView)
   }
 
 }

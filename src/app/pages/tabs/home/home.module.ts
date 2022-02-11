@@ -7,13 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
-import { CategoryTendencyChartComponent } from 'src/app/components/category-tendency-chart/category-tendency-chart.component';
-import { IncomeExpensesChartComponent } from 'src/app/components/income-expenses-chart/income-expenses-chart.component';
-import { IncomeExpensesListComponent } from 'src/app/components/income-expenses-list/income-expenses-list.component';
-import { MonthlyChartComponent } from 'src/app/components/monthly-chart/monthly-chart.component';
-import { HeaderWaveComponent } from 'src/app/components/header-wave/header-wave.component';
-import { CategoryBalanceChartComponent } from 'src/app/components/category-balance-chart/category-balance-chart.component';
-import { SwiperModule } from 'swiper/angular';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -21,16 +15,10 @@ import { SwiperModule } from 'swiper/angular';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SwiperModule
+    ComponentsModule
   ],
   declarations: [
-    HomePage,
-    IncomeExpensesListComponent,
-    CategoryTendencyChartComponent,
-    IncomeExpensesChartComponent,
-    MonthlyChartComponent,
-    HeaderWaveComponent,
-    CategoryBalanceChartComponent
+    HomePage
   ]
 })
 export class HomePageModule {}

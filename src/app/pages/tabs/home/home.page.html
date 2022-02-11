@@ -3,26 +3,31 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12">
-        <app-monthly-chart></app-monthly-chart>
+        <ion-card>
+          <ion-card-content>
+            <ion-list lines="none">
+              <ion-item class="ion-text-center">
+                <ion-icon (click)="prevDate()" color="primary" name="chevron-back-circle-outline" slot="start"></ion-icon>
+                <ion-label>{{ selectedDate.format('MMMM') }} flow</ion-label>
+                <ion-icon (click)="nextDate()" color="primary" name="chevron-forward-circle-outline" slot="end"></ion-icon>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="12">
-        <app-income-expenses-list limit="2"></app-income-expenses-list>
+        <app-monthly-chart [date]="selectedDate" [chartColor]="colors[10]"></app-monthly-chart>
       </ion-col>
     </ion-row>
     <ion-row>
-      <!-- usar carrusel tipo netflix para esto -->
-      <!-- <ion-col size="12"> -->
-        <swiper [config]="config">
-          <ng-template swiperSlide *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
-            <app-category-balance-chart category="gift & donation"></app-category-balance-chart>
-          </ng-template>
-        </swiper>
-      <!-- </ion-col> -->
+      <ion-col size="12">
+        <app-income-expenses-list [date]="selectedDate"></app-income-expenses-list>
+      </ion-col>
     </ion-row>
   </ion-grid>
-  
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="add-outline"></ion-icon>

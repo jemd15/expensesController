@@ -7,11 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class IncomeExpensesListComponent implements OnInit {
 
-  @Input() limit: number
-  @Input() filter: string
+  @Input() date
 
   constructor() { }
 
   ngOnInit() {}
+  
+  ngOnChanges(date) {
+    
+  }
 
 }

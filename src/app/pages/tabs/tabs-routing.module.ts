@@ -17,10 +17,6 @@ const routes: Routes = [
         loadChildren: () => import('./preferences/preferences.module').then(m => m.PreferencesPageModule)
       },
       {
-        path: 'accounts',
-        loadChildren: () => import('./accounts/accounts.module').then(m => m.AccountsPageModule)
-      },
-      {
         path: 'resume',
         loadChildren: () => import('./resume/resume.module').then(m => m.ResumePageModule)
       }

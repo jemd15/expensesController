@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { ColorGeneratorService } from 'src/app/services/colorGenerator/color-generator.service';
 import { SwiperOptions } from 'swiper';
+import * as dayjs from 'dayjs';
 
 @Component({
   selector: 'app-home',
@@ -23,10 +25,18 @@ export class HomePage implements OnInit {
       slideShadows: true,
     }
   }
+  colors: string[] = []
+  selectedDate = dayjs()
 
-  constructor() { }
+  constructor(
+    private colorGen: ColorGeneratorService
+  ) { }
 
   ngOnInit() {
+    // generamos un array de colores aleatorios para cada tarjeta
+    for (let i = 0; i < 11; i++) {
+      this.colors.push(this.colorGen.randomColor())
+    }
   }
 
   numberOfCards(): number {
@@ -38,6 +48,14 @@ export class HomePage implements OnInit {
   onResize(event) {
     this.config.slidesPerView = this.numberOfCards()
     console.log('window.innerWidth', window.innerWidth, 'slidesPerView', this.config.slidesPerView)
+  }
+
+  prevDate() {
+    this.selectedDate = this.selectedDate.subtract(1, 'month');
+  }
+
+  nextDate() {
+    this.selectedDate = this.selectedDate.add(1, 'month');
   }
 
 }

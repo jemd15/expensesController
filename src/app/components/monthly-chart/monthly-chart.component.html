@@ -2,15 +2,11 @@
   <ion-card-header>
     <ion-list lines="none">
       <ion-item>
-        <ion-label>Monthly flow</ion-label>
-        <ion-icon color="primary" name="chevron-forward-circle-outline" slot="end"></ion-icon>
-      </ion-item>
-      <ion-item>
         <h1><strong>{{ '5800000' | number }}</strong></h1>
       </ion-item>
     </ion-list>
   </ion-card-header>
   <ion-card-content>
-
+    <div id="chart" [chart]="chart"></div>
   </ion-card-content>
 </ion-card>

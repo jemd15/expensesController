@@ -7,22 +7,20 @@ import { IonicModule } from '@ionic/angular';
 import { ResumePageRoutingModule } from './resume-routing.module';
 
 import { ResumePage } from './resume.page';
-import { MonthlyChartComponent } from 'src/app/components/monthly-chart/monthly-chart.component';
-import { IncomeExpensesChartComponent } from 'src/app/components/income-expenses-chart/income-expenses-chart.component';
-import { CategoryTendencyChartComponent } from 'src/app/components/category-tendency-chart/category-tendency-chart.component';
+import { SwiperModule } from 'swiper/angular';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ResumePageRoutingModule
+    ResumePageRoutingModule,
+    SwiperModule,
+    ComponentsModule
   ],
   declarations: [
-    ResumePage,
-    CategoryTendencyChartComponent,
-    IncomeExpensesChartComponent,
-    MonthlyChartComponent
+    ResumePage
   ]
 })
 export class ResumePageModule {}
