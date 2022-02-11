@@ -6,11 +6,11 @@
           <ion-label>Income</ion-label>
         </ion-item>
     
-        <ion-list slot="content">
+        <ion-list lines="none" slot="content">
           <ion-item *ngFor="let movement of [1,2,3,4] | slice:0:limit;">
             <ion-icon color="danger" slot="start" size="small" name="ellipse"></ion-icon>
             <ion-label>This month</ion-label>
-            <strong><ion-text color="dark">$ </ion-text><ion-text color="danger" slot="end">{{ 5990 | number }}</ion-text></strong>
+            <strong><ion-text color="danger" slot="end">{{ 5990 | number }}</ion-text></strong>
           </ion-item>
         </ion-list>
       </ion-accordion>
@@ -19,11 +19,11 @@
           <ion-label>Expenses</ion-label>
         </ion-item>
     
-        <ion-list slot="content">
+        <ion-list lines="none" slot="content">
           <ion-item *ngFor="let movement of [1,2,3,4] | slice:0:limit;">
             <ion-icon color="success" slot="start" size="small" name="ellipse"></ion-icon>
             <ion-label>This month</ion-label>
-            <strong><ion-text color="dark">$ </ion-text><ion-text color="success" slot="end">{{ 5990 | number }}</ion-text></strong>
+            <strong><ion-text color="success" slot="end">{{ 5990 | number }}</ion-text></strong>
           </ion-item>
         </ion-list>
       </ion-accordion>

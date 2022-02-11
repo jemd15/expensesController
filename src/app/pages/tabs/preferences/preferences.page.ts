@@ -1,4 +1,5 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import { AppVersion } from '@awesome-cordova-plugins/app-version/ngx';
 
 @Component({
   selector: 'app-preferences',
@@ -7,13 +8,17 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 })
 export class PreferencesPage implements OnInit {
 
+  public versionNumber: string;
   isDarkModeOn: boolean = JSON.parse(localStorage.getItem('dark-mode')) || false;
 
   constructor(
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private appVersion: AppVersion
   ) { }
 
-  ngOnInit() {}
+  async ngOnInit() {
+    this.versionNumber = await this.appVersion.getVersionNumber();
+  }
 
   onToggleColorTheme(event) {
     console.log(event.detail.checked);

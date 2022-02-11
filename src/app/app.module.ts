@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { AppVersion } from '@awesome-cordova-plugins/app-version/ngx';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -16,7 +17,7 @@ import { AppComponent } from './app.component';
     IonicModule.forRoot(), 
     AppRoutingModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AppVersion],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
