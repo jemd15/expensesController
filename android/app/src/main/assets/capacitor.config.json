@@ -1,0 +1,9 @@
+{
+	"appId": "com.jemd.expenses.controller.app",
+	"appName": "expenses-controller",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"server": {
+		"url": "http://192.168.1.125:8100"
+	}
+}
