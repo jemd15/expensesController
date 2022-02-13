@@ -10,7 +10,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <h2 class="ion-padding-start"><ion-label color="dark">Expenses</ion-label></h2>
+      <h2 class="ion-padding-start"><ion-label color="dark">{{ 'resume.expenses' | translate }}</ion-label></h2>
       <swiper [config]="config">
         <ng-template swiperSlide *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]; let i = index">
           <app-category-balance-chart type="expenses" [chartColor]="colors[i]" [category]="'gift & donation ' + (i+1)"></app-category-balance-chart>
@@ -18,7 +18,7 @@
       </swiper>
     </ion-row>
     <ion-row>
-      <h2 class="ion-padding-start"><ion-label color="dark">Income</ion-label></h2>
+      <h2 class="ion-padding-start"><ion-label color="dark">{{ 'resume.income' | translate }}</ion-label></h2>
       <swiper [config]="config">
         <ng-template swiperSlide *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]; let i = index">
           <app-category-balance-chart type="income" [chartColor]="colors[i]" [category]="'gift & donation ' + (i+1)"></app-category-balance-chart>

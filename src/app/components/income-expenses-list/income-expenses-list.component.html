@@ -3,7 +3,7 @@
     <ion-accordion-group [multiple]="true" value="expenses">
       <ion-accordion value="expenses" toggle-icon="chevron-down-circle-outline">
         <ion-item slot="header">
-          <ion-label>Expenses</ion-label>
+          <ion-label>{{ 'income-expenses-list.expenses' | translate }}</ion-label>
         </ion-item>
     
         <ion-list lines="none" slot="content">
@@ -23,7 +23,7 @@
               </ion-label>
               <ion-label>
                 This month<br>
-                <ion-badge>PAID</ion-badge>
+                <ion-badge>{{ 'income-expenses-list.paid' | translate }}</ion-badge>
               </ion-label>
               <strong><ion-text color="danger" side="end">$ {{ 5990 | number }}</ion-text></strong>
             </ion-item>
@@ -31,7 +31,7 @@
               <ion-item-option color="success">
                 <ion-label class="ion-text-center">
                   <ion-icon name="wallet-outline"></ion-icon><br>
-                  Pay
+                  {{ 'income-expenses-list.pay' | translate }}
                 </ion-label>
               </ion-item-option>
             </ion-item-options>
@@ -40,7 +40,7 @@
       </ion-accordion>
       <ion-accordion value="income" toggle-icon="chevron-down-circle-outline">
         <ion-item slot="header">
-          <ion-label>Income</ion-label>
+          <ion-label>{{ 'income-expenses-list.income' | translate }}</ion-label>
         </ion-item>
     
         <ion-list lines="none" slot="content">
@@ -49,7 +49,7 @@
               <ion-item-option color="danger">
                 <ion-label class="ion-text-center">
                   <ion-icon name="trash-outline"></ion-icon><br>
-                  Delete
+                  {{ 'income-expenses-list.delete' | translate }}
                 </ion-label>
               </ion-item-option>
             </ion-item-options>

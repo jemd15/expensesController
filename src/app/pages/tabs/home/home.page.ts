@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { ColorGeneratorService } from 'src/app/services/colorGenerator/color-generator.service';
 import { SwiperOptions } from 'swiper';
 import * as dayjs from 'dayjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -29,10 +30,14 @@ export class HomePage implements OnInit {
   selectedDate = dayjs()
 
   constructor(
-    private colorGen: ColorGeneratorService
+    private colorGen: ColorGeneratorService,
+    private translate: TranslateService
   ) { }
 
   ngOnInit() {
+    console.log(this.translate.getDefaultLang())
+    dayjs.locale(this.translate.getDefaultLang())
+
     // generamos un array de colores aleatorios para cada tarjeta
     for (let i = 0; i < 11; i++) {
       this.colors.push(this.colorGen.randomColor())

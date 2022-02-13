@@ -1,0 +1,40 @@
+{
+  "home": {
+    "tab-title": "Inicio",
+    "dateSelector": "Flujo de {{date}}"
+  },
+  "resume": {
+    "tab-title": "Resumen",
+    "income": "Ingresos",
+    "expenses": "Gastos"
+  },
+  "preferences": {
+    "tab-title": "Ajustes",
+    "dark-mode": "Modo oscuro",
+    "backup": "Copia de seguridad",
+    "security": "Seguridad",
+    "rate": "Valorar",
+    "share": "Compartir",
+    "feedback": "Comentarios",
+    "version": "Versión",
+    "numeric": "Pin",
+    "gesture": "Patrón",
+    "fingerprint": "Huella",
+    "none": "Ninguno"
+  },
+  "total-income-expenses": {
+    "available": "Disponible",
+    "expenses": "Gastos restantes",
+    "remaining": "Restante en {{date}}"
+  },
+  "income-expenses-list": {
+    "income": "Ingresos",
+    "expenses": "Gastos",
+    "paid": "PAGADO",
+    "pay": "pagar",
+    "delete": "Eliminar"
+  },
+  "monthly-chart": {
+    "title": "Flujo de {{date}}"
+  }
+}

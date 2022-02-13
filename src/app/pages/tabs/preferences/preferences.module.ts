@@ -8,6 +8,7 @@ import { PreferencesPageRoutingModule } from './preferences-routing.module';
 
 import { PreferencesPage } from './preferences.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
     FormsModule,
     IonicModule,
     PreferencesPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    TranslateModule
   ],
   declarations: [PreferencesPage]
 })

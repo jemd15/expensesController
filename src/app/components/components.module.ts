@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { TranslateModule } from '@ngx-translate/core';
 import { ChartModule } from 'angular-highcharts';
 import { CategoryBalanceChartComponent } from './category-balance-chart/category-balance-chart.component';
 import { CategoryTendencyChartComponent } from './category-tendency-chart/category-tendency-chart.component';
@@ -14,7 +15,8 @@ import { TotalIncomeExpensesComponent } from './total-income-expenses/total-inco
   imports: [
     CommonModule,
     IonicModule,
-    ChartModule
+    ChartModule,
+    TranslateModule
   ],
   declarations: [
     IncomeExpensesListComponent,

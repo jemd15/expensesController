@@ -9,6 +9,7 @@ import { ResumePageRoutingModule } from './resume-routing.module';
 import { ResumePage } from './resume.page';
 import { SwiperModule } from 'swiper/angular';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
     IonicModule,
     ResumePageRoutingModule,
     SwiperModule,
-    ComponentsModule
+    ComponentsModule,
+    TranslateModule
   ],
   declarations: [
     ResumePage
