@@ -1,5 +1,8 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import * as dayjs from 'dayjs';
+import 'dayjs/locale/es';
+import 'dayjs/locale/en';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +18,7 @@ export class AppComponent implements OnInit {
     private translate: TranslateService
   ) {
     this.translate.setDefaultLang('es');
+    dayjs.locale(this.translate.getDefaultLang())
   }
 
   ngOnInit() {

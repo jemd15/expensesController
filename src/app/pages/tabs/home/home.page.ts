@@ -27,7 +27,7 @@ export class HomePage implements OnInit {
     }
   }
   colors: string[] = []
-  selectedDate = dayjs()
+  selectedDate
 
   constructor(
     private colorGen: ColorGeneratorService,
@@ -35,8 +35,7 @@ export class HomePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.translate.getDefaultLang())
-    dayjs.locale(this.translate.getDefaultLang())
+    this.selectedDate = dayjs()
 
     // generamos un array de colores aleatorios para cada tarjeta
     for (let i = 0; i < 11; i++) {
