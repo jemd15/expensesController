@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import * as dayjs from 'dayjs';
 import { ColorGeneratorService } from 'src/app/services/colorGenerator/color-generator.service';
 import { SwiperOptions } from 'swiper';
 
@@ -26,6 +27,7 @@ export class ResumePage implements OnInit {
     }
   }
   colors: string[] = []
+  date = dayjs()
 
   constructor(
     private colorGen: ColorGeneratorService

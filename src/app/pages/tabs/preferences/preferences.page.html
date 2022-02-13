@@ -22,9 +22,9 @@
         <ion-card>
           <ion-card-content>
             <ion-list lines="none">
-              <ion-item button>
+              <ion-item>
                 <ion-label>Dark mode</ion-label>
-                <ion-toggle (ionChange)="onToggleColorTheme($event)" [checked]="isDarkModeOn"></ion-toggle>
+                <ion-toggle slot="end" (ionChange)="onToggleColorTheme($event)" [checked]="isDarkModeOn"></ion-toggle>
               </ion-item>
             </ion-list>
           </ion-card-content>
@@ -38,7 +38,7 @@
               <ion-item button>
                 <ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
                 <ion-label>Backup</ion-label>
-                <ion-badge color="success">Activated</ion-badge>
+                <ion-badge slot="end" color="success">Activated</ion-badge>
               </ion-item>
             </ion-list>
             <ion-accordion-group>
@@ -50,22 +50,22 @@
 
                 <ion-list slot="content">
                   <ion-radio-group>
-                    <ion-item button class="ion-padding-start">
+                    <ion-item class="ion-padding-start">
                       <ion-label>Numeric passcode</ion-label>
                       <ion-radio slot="end" value="numeric"></ion-radio>
                     </ion-item>
                 
-                    <ion-item button class="ion-padding-start">
+                    <ion-item class="ion-padding-start">
                       <ion-label>Gesture passcode</ion-label>
                       <ion-radio slot="end" value="gesture"></ion-radio>
                     </ion-item>
                 
-                    <ion-item button class="ion-padding-start">
+                    <ion-item class="ion-padding-start">
                       <ion-label>Fingerprint unlock</ion-label>
                       <ion-radio slot="end" value="fingerprint"></ion-radio>
                     </ion-item>
                 
-                    <ion-item button class="ion-padding-start">
+                    <ion-item class="ion-padding-start">
                       <ion-label>None</ion-label>
                       <ion-radio slot="end" value="none"></ion-radio>
                     </ion-item>
@@ -98,7 +98,7 @@
         <ion-card>
           <ion-card-content>
             <ion-list lines="none">
-              <ion-item>
+              <ion-item button>
                 <!-- <ion-icon name="" slot="start"></ion-icon> -->
                 <ion-label>Version</ion-label>
                 <ion-badge slot="end">{{ versionNumber }}</ion-badge>

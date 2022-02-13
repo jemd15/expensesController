@@ -1,30 +1,70 @@
 <ion-card>
   <ion-card-content>
-    <ion-accordion-group [multiple]="true" value="income">
-      <ion-accordion value="income" toggle-icon="chevron-down-circle-outline">
-        <ion-item slot="header">
-          <ion-label>Income</ion-label>
-        </ion-item>
-    
-        <ion-list lines="none" slot="content">
-          <ion-item *ngFor="let movement of [1,2,3,4] | slice:0:limit;">
-            <ion-icon color="danger" slot="start" size="small" name="ellipse"></ion-icon>
-            <ion-label>This month</ion-label>
-            <strong><ion-text color="danger" slot="end">{{ 5990 | currency }}</ion-text></strong>
-          </ion-item>
-        </ion-list>
-      </ion-accordion>
+    <ion-accordion-group [multiple]="true" value="expenses">
       <ion-accordion value="expenses" toggle-icon="chevron-down-circle-outline">
         <ion-item slot="header">
           <ion-label>Expenses</ion-label>
         </ion-item>
     
         <ion-list lines="none" slot="content">
-          <ion-item *ngFor="let movement of [1,2,3,4] | slice:0:limit;">
-            <ion-icon color="success" slot="start" size="small" name="ellipse"></ion-icon>
-            <ion-label>This month</ion-label>
-            <strong><ion-text color="success" slot="end">{{ 5990 | currency }}</ion-text></strong>
-          </ion-item>
+          <ion-item-sliding *ngFor="let movement of [1,2,3,4] | slice:0:limit;">
+            <ion-item-options side="start">
+              <ion-item-option color="danger">
+                <ion-label class="ion-text-center">
+                  <ion-icon name="trash-outline"></ion-icon><br>
+                  Delete
+                </ion-label>
+              </ion-item-option>
+            </ion-item-options>
+            <ion-item button class="ion-no-padding">
+              <ion-label class="date-label ion-text-center">
+                {{ date.format('DD') }}<br>
+                {{ date.format('MMM') }}
+              </ion-label>
+              <ion-label>
+                This month<br>
+                <ion-badge>PAID</ion-badge>
+              </ion-label>
+              <strong><ion-text color="danger" side="end">$ {{ 5990 | number }}</ion-text></strong>
+            </ion-item>
+            <ion-item-options slot="end">
+              <ion-item-option color="success">
+                <ion-label class="ion-text-center">
+                  <ion-icon name="wallet-outline"></ion-icon><br>
+                  Pay
+                </ion-label>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-accordion>
+      <ion-accordion value="income" toggle-icon="chevron-down-circle-outline">
+        <ion-item slot="header">
+          <ion-label>Income</ion-label>
+        </ion-item>
+    
+        <ion-list lines="none" slot="content">
+          <ion-item-sliding *ngFor="let movement of [1,2,3,4] | slice:0:limit;">
+            <ion-item-options side="start">
+              <ion-item-option color="danger">
+                <ion-label class="ion-text-center">
+                  <ion-icon name="trash-outline"></ion-icon><br>
+                  Delete
+                </ion-label>
+              </ion-item-option>
+            </ion-item-options>
+            <ion-item button class="ion-no-padding">
+              <ion-label class="date-label ion-text-center">
+                {{ date.format('DD') }}<br>
+                {{ date.format('MMM') }}
+              </ion-label>
+              <ion-label>
+                This month<br>
+                <!-- <ion-badge>PAID</ion-badge> -->
+              </ion-label>
+              <strong><ion-text color="success" side="end">$ {{ 5990 | number }}</ion-text></strong>
+            </ion-item>
+          </ion-item-sliding>
         </ion-list>
       </ion-accordion>
     </ion-accordion-group>
