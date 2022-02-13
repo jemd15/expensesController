@@ -37,19 +37,19 @@
             <ion-list lines="none">
               <ion-item button>
                 <ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
-                <ion-label>{{ "preferences.backup" | translate}}</ion-label>
+                <ion-label class="ion-text-wrap">{{ "preferences.backup" | translate}}</ion-label>
                 <ion-badge slot="end" color="success">Activated</ion-badge>
               </ion-item>
             </ion-list>
             <ion-accordion-group>
-              <ion-accordion value="income" toggle-icon="chevron-down-circle-outline">
+              <ion-accordion toggle-icon="chevron-down-circle-outline">
                 <ion-item button slot="header">
                   <ion-icon slot="start" name="shield-checkmark-outline"></ion-icon>
                   <ion-label>{{ "preferences.security" | translate}}</ion-label>
                 </ion-item>
 
                 <ion-list slot="content">
-                  <ion-radio-group>
+                  <ion-radio-group (ionChange)="changeSecurity($event)" [value]="selectedSecurity">
                     <ion-item class="ion-padding-start">
                       <ion-icon slot="start" name="keypad-outline"></ion-icon>
                       <ion-label>{{ "preferences.numeric" | translate}}</ion-label>
@@ -93,12 +93,29 @@
                 <ion-label>{{ "preferences.feedback" | translate}}</ion-label>
                 <ion-icon slot="end" name="chevron-down-circle-outline"></ion-icon>
               </ion-item>
-              <ion-item (click)="changeLanguage()" button>
-                <ion-icon slot="start" name="chatbox-ellipses-outline"></ion-icon>
-                <ion-label>{{ "preferences.language" | translate}}</ion-label>
-                <ion-badge>{{ selectedLanguage }}</ion-badge>
-              </ion-item>
             </ion-list>
+            <ion-accordion-group>
+              <ion-accordion toggle-icon="chevron-down-circle-outline">
+                <ion-item button slot="header">
+                  <ion-icon slot="start" name="language-outline"></ion-icon>
+                  <ion-label>{{ "preferences.language" | translate}}</ion-label>
+                </ion-item>
+
+                <ion-list slot="content">
+                  <ion-radio-group (ionChange)="changeLanguage($event)" [value]="selectedLanguage">
+                    <ion-item class="ion-padding-start">
+                      <ion-label>{{ "preferences.spanish" | translate}}</ion-label>
+                      <ion-radio value="es" slot="end"></ion-radio>
+                    </ion-item>
+                
+                    <ion-item class="ion-padding-start">
+                      <ion-label>{{ "preferences.english" | translate}}</ion-label>
+                      <ion-radio value="en" slot="end"></ion-radio>
+                    </ion-item>
+                  </ion-radio-group>
+                </ion-list>
+              </ion-accordion>
+            </ion-accordion-group>
           </ion-card-content>
         </ion-card>
       </ion-col>

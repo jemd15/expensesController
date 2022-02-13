@@ -21,7 +21,9 @@
     "gesture": "Gesture",
     "fingerprint": "fingerprint",
     "none": "Ninguno",
-    "language": "Language"
+    "language": "Language",
+    "spanish": "Spanish",
+    "english": "English"
   },
   "total-income-expenses": {
     "available": "Available",

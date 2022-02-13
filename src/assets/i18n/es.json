@@ -21,7 +21,9 @@
     "gesture": "Patrón",
     "fingerprint": "Huella",
     "none": "Ninguno",
-    "language": "Idioma"
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés"
   },
   "total-income-expenses": {
     "available": "Disponible",
