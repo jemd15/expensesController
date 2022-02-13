@@ -20,7 +20,8 @@
     "numeric": "Pin",
     "gesture": "Patrón",
     "fingerprint": "Huella",
-    "none": "Ninguno"
+    "none": "Ninguno",
+    "language": "Idioma"
   },
   "total-income-expenses": {
     "available": "Disponible",

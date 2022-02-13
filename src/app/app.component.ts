@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
     private renderer: Renderer2,
     private translate: TranslateService
   ) {
+    this.translate.addLangs(['en', 'es'])
     this.translate.setDefaultLang('es');
     dayjs.locale(this.translate.getDefaultLang())
   }

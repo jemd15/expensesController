@@ -1,5 +1,41 @@
 {
   "home": {
-    "dateSelector": "{{date}} Flow"
+    "tab-title": "Home",
+    "dateSelector": "{{date}} flow"
+  },
+  "resume": {
+    "tab-title": "Resume",
+    "income": "Income",
+    "expenses": "Expenses"
+  },
+  "preferences": {
+    "tab-title": "Preferences",
+    "dark-mode": "Dark mode",
+    "backup": "Backup",
+    "security": "Security",
+    "rate": "Rank",
+    "share": "Share",
+    "feedback": "Comments",
+    "version": "Version",
+    "numeric": "Numeric passcode",
+    "gesture": "Gesture",
+    "fingerprint": "fingerprint",
+    "none": "Ninguno",
+    "language": "Language"
+  },
+  "total-income-expenses": {
+    "available": "Available",
+    "expenses": "Remaining expenses",
+    "remaining": "Remaining in {{date}}"
+  },
+  "income-expenses-list": {
+    "income": "Income",
+    "expenses": "Expenses",
+    "paid": "PAID",
+    "pay": "pay",
+    "delete": "Delete"
+  },
+  "monthly-chart": {
+    "title": "{{date}} flow"
   }
 }

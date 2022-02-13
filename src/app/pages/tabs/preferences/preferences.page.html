@@ -93,6 +93,11 @@
                 <ion-label>{{ "preferences.feedback" | translate}}</ion-label>
                 <ion-icon slot="end" name="chevron-down-circle-outline"></ion-icon>
               </ion-item>
+              <ion-item (click)="changeLanguage()" button>
+                <ion-icon slot="start" name="chatbox-ellipses-outline"></ion-icon>
+                <ion-label>{{ "preferences.language" | translate}}</ion-label>
+                <ion-badge>{{ selectedLanguage }}</ion-badge>
+              </ion-item>
             </ion-list>
           </ion-card-content>
         </ion-card>
