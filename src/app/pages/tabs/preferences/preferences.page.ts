@@ -2,6 +2,8 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import { AppVersion } from '@awesome-cordova-plugins/app-version/ngx';
 import { TranslateService } from '@ngx-translate/core';
 import * as dayjs from 'dayjs';
+import * as localeData from "dayjs/plugin/localeData";
+dayjs.extend(localeData);
 
 @Component({
   selector: 'app-preferences',
@@ -37,6 +39,7 @@ export class PreferencesPage implements OnInit {
     this.translate.use(this.selectedLanguage);
     localStorage.setItem('language', this.selectedLanguage);
     dayjs.locale(this.selectedLanguage)
+    window.location.reload()
   }
 
   changeSecurity(event) {
