@@ -2,7 +2,9 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { ColorGeneratorService } from 'src/app/services/colorGenerator/color-generator.service';
 import { SwiperOptions } from 'swiper';
 import * as dayjs from 'dayjs';
-import { TranslateService } from '@ngx-translate/core';
+import { ModalController } from '@ionic/angular';
+import { AddMovementPage } from './add-movement/add-movement.page';
+import { Movement } from 'src/app/models/movement.model';
 
 @Component({
   selector: 'app-home',
@@ -28,10 +30,11 @@ export class HomePage implements OnInit {
   }
   colors: string[] = []
   selectedDate
+  movements: Movement[] = []
 
   constructor(
     private colorGen: ColorGeneratorService,
-    private translate: TranslateService
+    private modalController: ModalController
   ) { }
 
   ngOnInit() {
@@ -60,6 +63,19 @@ export class HomePage implements OnInit {
 
   nextDate() {
     this.selectedDate = this.selectedDate.add(1, 'month');
+  }
+
+  async addMovement() {
+    const modal = await this.modalController.create({
+      component: AddMovementPage
+    })
+
+    modal.onDidDismiss()
+      .then((res: any) => {
+        if (res.data.newMovement) this.movements.push(res.data.newMovement)
+      })
+
+    return await modal.present()
   }
 
 }

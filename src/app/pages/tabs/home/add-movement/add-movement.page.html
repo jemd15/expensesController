@@ -1,0 +1,78 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>{{ 'home.add-movement.title' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <form [formGroup]="addMovementForm">
+    <ion-card>
+      <ion-card-content>
+        <ion-list lines="none">
+          <ion-item>
+            <ion-icon (click)="closeModal()" size="large" slot="end" name="close"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{"home.add-movement.amount" | translate}}</ion-label>
+            <ion-input formControlName="amount" type="number" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{"home.add-movement.description" | translate}}</ion-label>
+            <ion-input formControlName="description" type="text" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="warning">$ {{ '10759346' | number }} {{ 'home.add-movement.total-amount' | translate }}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-segment (ionChange)="typeChanged($event)" mode="ios" value="expense">
+              <ion-segment-button value="expense" color="warning">
+                <ion-label>{{ 'home.add-movement.expense' | translate }}</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="income" color="success">
+                <ion-label>{{ 'home.add-movement.income' | translate }}</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{"home.add-movement.date" | translate}}</ion-label>
+            <ion-input formControlName="date" type="date" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{"home.add-movement.type" | translate}}</ion-label>
+            <ion-select formControlName="category">
+              <ion-select-option>Female</ion-select-option>
+              <ion-select-option>Male</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{ 'home.add-movement.repeat' | translate }}</ion-label>
+            <ion-toggle slot="end" (ionChange)="onOffRepeat($event)"></ion-toggle>
+          </ion-item>
+          <ion-label *ngIf="isRepeatEnabled" class="ion-padding-start" color="primary">{{ 'home.add-movement.repeat-time' | translate }}</ion-label>
+          <ion-item *ngIf="isRepeatEnabled">
+            <ion-segment (ionChange)="repeatOptionsChanged($event)" mode="ios" value="daily">
+              <ion-segment-button value="daily" color="warning">
+                <ion-label>{{ 'home.add-movement.repeat-options.daily' | translate }}</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="weekly" color="success">
+                <ion-label>{{ 'home.add-movement.repeat-options.weekly' | translate }}</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="monthly" color="success">
+                <ion-label>{{ 'home.add-movement.repeat-options.monthly' | translate }}</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="yearly" color="success">
+                <ion-label>{{ 'home.add-movement.repeat-options.yearly' | translate }}</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="transparent">
+    <ion-button *ngIf="addMovementForm.valid" class="ion-margin-start ion-margin-end" expand="block" (click)="addMovement()" color="success">{{ 'home.add-movement.submit' | translate }}</ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage
+  },
+  {
+    path: 'add-movement',
+    loadChildren: () => import('./add-movement/add-movement.module').then( m => m.AddMovementPageModule)
   }
 ];
 

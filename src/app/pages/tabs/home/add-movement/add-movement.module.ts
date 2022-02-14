@@ -4,10 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { AddMovementPageRoutingModule } from './add-movement-routing.module';
 
-import { HomePage } from './home.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { AddMovementPage } from './add-movement.page';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
@@ -15,13 +14,10 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
-    ComponentsModule,
-    TranslateModule,
-    ReactiveFormsModule
+    AddMovementPageRoutingModule,
+    ReactiveFormsModule,
+    TranslateModule
   ],
-  declarations: [
-    HomePage
-  ]
+  declarations: [AddMovementPage]
 })
-export class HomePageModule {}
+export class AddMovementPageModule {}

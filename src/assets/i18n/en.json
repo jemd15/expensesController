@@ -1,7 +1,30 @@
 {
   "home": {
     "tab-title": "Home",
-    "dateSelector": "{{date}} flow"
+    "dateSelector": "{{date}} flow",
+    "add-movement": {
+      "title": "Add movement",
+      "description": "Write a description",
+      "amount": "Amount",
+      "category": "Category",
+      "date": "Date",
+      "submit": "Add movement",
+      "cancel": "Cancel",
+      "error": "Error adding movement",
+      "success": "Movement added",
+      "repeat": "Repeat",
+      "total-amount": "remaining this month",
+      "income": "Income",
+      "expense": "Expense",
+      "type": "Type",
+      "repeat-time": "Repeat every",
+      "repeat-options": {
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly",
+        "yearly": "Yearly"
+      }
+    }
   },
   "resume": {
     "tab-title": "Resume",

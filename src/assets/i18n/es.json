@@ -1,7 +1,30 @@
 {
   "home": {
     "tab-title": "Inicio",
-    "dateSelector": "Flujo de {{date}}"
+    "dateSelector": "Flujo de {{date}}",
+    "add-movement": {
+      "title": "Añadir movimiento",
+      "description": "Escribe una descripción",
+      "amount": "Cantidad",
+      "category": "Categoría",
+      "date": "Fecha",
+      "submit": "Añadir movimiento",
+      "cancel": "Cancelar",
+      "error": "Error al añadir el movimiento",
+      "success": "Movimiento añadido correctamente",
+      "repeat": "Repetir",
+      "total-amount": "restante este mes",
+      "income": "Ingreso",
+      "expense": "Gasto",
+      "type": "Tipo",
+      "repeat-time": "Repetir cada",
+      "repeat-options": {
+        "daily": "Diariamente",
+        "weekly": "Semanalmente",
+        "monthly": "Mensualmente",
+        "yearly": "Anualmente"
+      }
+    }
   },
   "resume": {
     "tab-title": "Resumen",
