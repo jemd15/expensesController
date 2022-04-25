@@ -19,7 +19,7 @@
             <ion-item button class="ion-no-padding">
               <ion-label class="date-label ion-text-center">
                 {{ date.format('DD') }}<br>
-                {{ date.format('MMM') }}
+                {{ date.format('MMM') | titlecase }}
               </ion-label>
               <ion-label>
                 This month<br>
@@ -56,7 +56,7 @@
             <ion-item button class="ion-no-padding">
               <ion-label class="date-label ion-text-center">
                 {{ date.format('DD') }}<br>
-                {{ date.format('MMM') }}
+                {{ date.format('MMM') | titlecase }}
               </ion-label>
               <ion-label>
                 This month<br>
