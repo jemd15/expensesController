@@ -52,13 +52,13 @@
                   <ion-radio-group (ionChange)="changeSecurity($event)" [value]="selectedSecurity">
                     <ion-item class="ion-padding-start">
                       <ion-icon slot="start" name="keypad-outline"></ion-icon>
-                      <ion-label>{{ "preferences.numeric" | translate}}</ion-label>
-                      <ion-radio slot="end" value="numeric"></ion-radio>
+                      <ion-label>{{ "preferences.pin" | translate}}</ion-label>
+                      <ion-radio slot="end" value="pin"></ion-radio>
                     </ion-item>
                 
                     <ion-item class="ion-padding-start">
-                      <ion-icon color="dark" slot="start" src="../../../../assets/icon/patron-de-bloqueo.svg"></ion-icon>
-                      <ion-label>{{ "preferences.gesture" | translate}}</ion-label>
+                      <ion-icon slot="start" src="../../../../assets/icon/password.svg"></ion-icon>
+                      <ion-label>{{ "preferences.password" | translate}}</ion-label>
                       <ion-radio slot="end" value="gesture"></ion-radio>
                     </ion-item>
                 

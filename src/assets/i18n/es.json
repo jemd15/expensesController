@@ -26,6 +26,9 @@
       }
     }
   },
+  "accounts": {
+    "tab-title": "Cuentas"
+  },
   "resume": {
     "tab-title": "Resumen",
     "income": "Ingresos",
@@ -40,8 +43,8 @@
     "share": "Compartir",
     "feedback": "Comentarios",
     "version": "Versión",
-    "numeric": "Pin",
-    "gesture": "Patrón",
+    "password": "Contraseña",
+    "pin": "PIN",
     "fingerprint": "Huella",
     "none": "Ninguno",
     "language": "Idioma",

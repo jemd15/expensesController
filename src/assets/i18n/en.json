@@ -26,6 +26,9 @@
       }
     }
   },
+  "accounts": {
+    "tab-title": "Accounts"
+  },
   "resume": {
     "tab-title": "Resume",
     "income": "Income",
@@ -40,8 +43,8 @@
     "share": "Share",
     "feedback": "Comments",
     "version": "Version",
-    "numeric": "Numeric passcode",
-    "gesture": "Gesture",
+    "password": "Password",
+    "pin": "PIN",
     "fingerprint": "fingerprint",
     "none": "Ninguno",
     "language": "Language",
