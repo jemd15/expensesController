@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Account } from 'src/app/models/account.model';
+import * as dayjs from 'dayjs';
+import { ColorGeneratorService } from 'src/app/services/colorGenerator/color-generator.service';
 
 @Component({
   selector: 'app-accounts',
@@ -26,25 +28,30 @@ export class AccountsPage implements OnInit {
       number: '00 8349 3154',
       type: 'credit',
       isPrincipal: true
-    },
+    }
   ]
 
-  accountSelected: Account
+  accountSelected: Account;
+  date = dayjs();
+  color: string;
 
-  constructor() { }
+  constructor(
+    private colorGen: ColorGeneratorService
+  ) { }
 
   ngOnInit() {
-    this.accountSelected = this.accounts.find(account => account.isPrincipal)
+    this.accountSelected = this.accounts.find(account => account.isPrincipal);
+    this.color = this.colorGen.randomColor();
   }
 
   nextAccount() {
     const selectedAccountId = this.accounts.findIndex(account => account === this.accountSelected);
-    (selectedAccountId === this.accounts.length - 1) ? this.accountSelected = this.accounts[0] : this.accountSelected = this.accounts[selectedAccountId + 1]
+    (selectedAccountId === this.accounts.length - 1) ? this.accountSelected = this.accounts[0] : this.accountSelected = this.accounts[selectedAccountId + 1];
   }
   
   prevAccount() {
     const selectedAccountId = this.accounts.findIndex(account => account === this.accountSelected);
-    (!selectedAccountId) ? this.accountSelected = this.accounts[this.accounts.length - 1] : this.accountSelected = this.accounts[selectedAccountId - 1]
+    (!selectedAccountId) ? this.accountSelected = this.accounts[this.accounts.length - 1] : this.accountSelected = this.accounts[selectedAccountId - 1];
   }
 
   addAccount() {

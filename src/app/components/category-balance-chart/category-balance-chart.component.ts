@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Categories } from 'src/app/enums/catergories.enum';
 import { Chart } from 'angular-highcharts';
+import { ColorGeneratorService } from 'src/app/services/colorGenerator/color-generator.service';
 
 @Component({
   selector: 'app-category-balance-chart',
@@ -13,10 +14,14 @@ export class CategoryBalanceChartComponent implements OnInit {
   @Input() chartColor: string;
   public chart: any;
 
-  constructor() { }
+  constructor(
+    private colorGen: ColorGeneratorService
+  ) {
+    if (!this.chartColor) this.chartColor = this.colorGen.randomColor();
+  }
 
   ngOnInit() {
-    this.newChart([29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4])
+    this.newChart([29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]);
   }
 
   newChart(data: any) {

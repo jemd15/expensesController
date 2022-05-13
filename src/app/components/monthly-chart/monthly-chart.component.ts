@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
+import { Account } from 'src/app/models/account.model';
+import { ColorGeneratorService } from 'src/app/services/colorGenerator/color-generator.service';
 
 @Component({
   selector: 'app-monthly-chart',
@@ -9,10 +11,15 @@ import { Chart } from 'angular-highcharts';
 export class MonthlyChartComponent implements OnInit {
 
   @Input() chartColor: string;
-  @Input() date
+  @Input() date;
+  @Input() account: Account;
   public chart: any;
 
-  constructor() { }
+  constructor(
+    private colorGen: ColorGeneratorService
+  ) {
+    if (!this.chartColor) this.chartColor = this.colorGen.randomColor();
+  }
 
   ngOnInit() {
     this.newChart([

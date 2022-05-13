@@ -28,6 +28,19 @@
         </ion-card>
       </ion-col>
     </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <app-monthly-chart [account]="accountSelected" [date]="date"></app-monthly-chart>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col size="12">
+        <app-income-expenses-chart [account]="accountSelected"></app-income-expenses-chart>
+      </ion-col>
+    </ion-row>
+
   </ion-grid>
 
   <ion-fab (click)="addAccount()" vertical="bottom" horizontal="end" slot="fixed">

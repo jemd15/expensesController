@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Account } from 'src/app/models/account.model';
 
 @Component({
   selector: 'app-income-expenses-chart',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./income-expenses-chart.component.scss'],
 })
 export class IncomeExpensesChartComponent implements OnInit {
+
+  @Input() account: Account
 
   constructor() { }
 

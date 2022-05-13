@@ -21,8 +21,6 @@ import { TranslateModule } from '@ngx-translate/core';
     ComponentsModule,
     TranslateModule
   ],
-  declarations: [
-    ResumePage
-  ]
+  declarations: [ResumePage]
 })
 export class ResumePageModule {}
