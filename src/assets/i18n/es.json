@@ -67,5 +67,9 @@
   },
   "monthly-chart": {
     "title": "Flujo de {{date}}"
+  },
+  "income-expenses-chart": {
+    "type-income": "Ingresos",
+    "type-expenses": "Gastos"
   }
 }
