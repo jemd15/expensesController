@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ionic serve --consolelogs --external --devapp --no-open",
-    "start:gp": "ionic serve --consolelogs --external --no-open --public-host=8100-jemd15-expensescontrol-uu1wd1woaqp.ws-us33.gitpod.io",
+    "start:gp": "ionic serve --consolelogs --external --no-open --public-host=8100-jemd15-expensescontroll-vti6i5kt0zw.ws-us45.gitpod.io",
     "start:live": "adb connect 192.168.1.135:5555 && ionic cap run android -l --external --host=192.168.1.125 --target=192.168.1.135:5555 --consolelogs",
     "build": "ionic capacitor build android",
     "fix:dependencies": "npx jetify",

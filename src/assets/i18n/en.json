@@ -27,7 +27,9 @@
     }
   },
   "accounts": {
-    "tab-title": "Accounts"
+    "tab-title": "Accounts",
+    "type-debit": "Debit",
+    "type-credit": "Credit"
   },
   "resume": {
     "tab-title": "Resume",
