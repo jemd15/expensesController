@@ -7,11 +7,11 @@
         <ion-card>
           <ion-card-content>
             <ion-list lines="none">
-              <ion-item class="ion-text-center">
+              <ion-item>
                 <ion-icon (click)="prevAccount()" color="primary" name="chevron-back-circle-outline" slot="start"></ion-icon>
                 <ion-grid>
                   <ion-row>
-                    <ion-text class="ion-no-padding"><h2>{{ accountSelected.name | titlecase }}</h2></ion-text>
+                    <ion-title class="ion-no-padding"><b>{{ accountSelected.name | titlecase }}</b></ion-title>
                   </ion-row>
                   <ion-row>
                     <ion-text *ngIf="accountSelected.type === 'debit'" class="ion-no-padding">{{ 'accounts.type-debit' | translate | titlecase }}</ion-text>

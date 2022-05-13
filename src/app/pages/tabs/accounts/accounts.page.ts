@@ -12,12 +12,20 @@ export class AccountsPage implements OnInit {
     {
       name: 'Banco de Chile',
       number: '00 2548 2569',
-      type: 'debit'
+      type: 'debit',
+      isPrincipal: false
     },
     {
       name: 'Banco de Chile',
-      number: '00 2548 2569',
-      type: 'credit'
+      number: '00 5435 1597',
+      type: 'credit',
+      isPrincipal: false
+    },
+    {
+      name: 'Scotiabank',
+      number: '00 8349 3154',
+      type: 'credit',
+      isPrincipal: true
     },
   ]
 
@@ -26,7 +34,7 @@ export class AccountsPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.accountSelected = this.accounts[Math.random().toFixed()]
+    this.accountSelected = this.accounts.find(account => account.isPrincipal)
   }
 
   nextAccount() {
@@ -40,7 +48,7 @@ export class AccountsPage implements OnInit {
   }
 
   addAccount() {
-    
+
   }
 
 }
