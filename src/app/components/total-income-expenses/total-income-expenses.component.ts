@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Account } from 'src/app/models/account.model';
 
 @Component({
   selector: 'app-total-income-expenses',
@@ -8,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TotalIncomeExpensesComponent implements OnInit {
 
   @Input() date
+  @Input() account: Account
 
   constructor() { }
 

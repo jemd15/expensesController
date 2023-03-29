@@ -1,3 +1,7 @@
-<p>
-  income-expenses-chart works!
-</p>
+<ion-card>
+  <ion-card-content>
+    <div id="chart" [chart]="chart"></div>
+    <ion-title *ngIf="type === 'income'" color="dark">{{ 'income-expenses-chart.type-income' | translate }}</ion-title>
+    <ion-title *ngIf="type === 'expenses'" color="dark">{{ 'income-expenses-chart.type-expenses' | translate }}</ion-title>
+  </ion-card-content>
+</ion-card>

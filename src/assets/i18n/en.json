@@ -27,7 +27,9 @@
     }
   },
   "accounts": {
-    "tab-title": "Accounts"
+    "tab-title": "Accounts",
+    "type-debit": "Debit",
+    "type-credit": "Credit"
   },
   "resume": {
     "tab-title": "Resume",
@@ -72,5 +74,9 @@
     "description": "Lorem ipsum english, sit amet consectetur adipisicing elit.",
     "login": "log in",
     "singup": "create account"
+  },
+  "income-expenses-chart": {
+    "type-income": "Income",
+    "type-expenses": "Expenses"
   }
 }

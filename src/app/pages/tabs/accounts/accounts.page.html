@@ -1,9 +1,57 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>accounts</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <app-header-wave></app-header-wave>
+  <ion-grid>
 
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-content>
+            <ion-list lines="none">
+              <ion-item>
+                <ion-icon (click)="prevAccount()" color="primary" name="chevron-back-circle-outline" slot="start"></ion-icon>
+                <ion-grid>
+                  <ion-row>
+                    <ion-title class="ion-no-padding"><b>{{ accountSelected.name | titlecase }}</b></ion-title>
+                  </ion-row>
+                  <ion-row>
+                    <ion-text *ngIf="accountSelected.type === 'debit'" class="ion-no-padding">{{ 'accounts.type-debit' | translate | titlecase }}</ion-text>
+                    <ion-text *ngIf="accountSelected.type === 'credit'" class="ion-no-padding">{{ 'accounts.type-credit' | translate | titlecase }}</ion-text>
+                  </ion-row>
+                  <ion-row>
+                    <ion-text>{{ accountSelected.number }}</ion-text>
+                  </ion-row>
+                </ion-grid>
+                <ion-icon (click)="nextAccount()" color="primary" name="chevron-forward-circle-outline" slot="end"></ion-icon>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <app-monthly-chart [account]="accountSelected" [date]="date"></app-monthly-chart>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col size="12">
+        <app-income-expenses-chart type="expenses" [account]="accountSelected"></app-income-expenses-chart>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col size="12">
+        <app-income-expenses-chart type="income" [account]="accountSelected"></app-income-expenses-chart>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-fab (click)="addAccount()" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
