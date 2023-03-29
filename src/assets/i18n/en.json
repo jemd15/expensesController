@@ -65,5 +65,12 @@
   },
   "monthly-chart": {
     "title": "{{date}} flow"
+  },
+  "login": {
+    "title": "Welcome to",
+    "app-name": "Expenses Controller",
+    "description": "Lorem ipsum english, sit amet consectetur adipisicing elit.",
+    "login": "log in",
+    "singup": "create account"
   }
 }
